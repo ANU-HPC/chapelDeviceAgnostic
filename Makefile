@@ -5,6 +5,8 @@ else
 CHPL_FLAGS=--fast
 endif
 
+all: pi_cpu pi_gpu heat_cpu heat_gpu
+
 pi_cpu: pi.chpl
 	CHPL_LOCALE_MODEL=flat chpl $(CHPL_FLAGS) $< -o $@
 
@@ -20,4 +22,4 @@ heat_gpu: heat.chpl
 .PHONY: clean
 
 clean:
-	rm pi_cpu pi_gpu heat_cpu
+	rm pi_cpu pi_gpu heat_cpu heat_gpu
